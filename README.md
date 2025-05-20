@@ -51,7 +51,7 @@ target_repo:
 - `target_files` take precedence if `target_repo` is also defined
 
 3. **Create a PR**
-Make a code change and open a PR. DeepDocs will detect the diff and update the relevant doc files automatically.
+Make a code change and open a PR. DeepDocs will update the relevant doc files automatically in a commit and add it to same PR.
 
 
 ## Credit usage
