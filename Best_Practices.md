@@ -43,7 +43,6 @@ If you’ve written new code that isn’t yet documented:
   - DeepDocs will then reliably update this file as the code evolves.
     
 
-
 ## 5. Always Use the `main` Branch as the Source of Truth
 
 DeepDocs uses the `main` branch of your repo to determine the latest version of your documentation. All comparisons and updates are made against the `main` branch.
