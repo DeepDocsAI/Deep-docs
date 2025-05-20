@@ -1,6 +1,7 @@
 ## DeepDocs: Update Your Docs Automatically With AI
 <!--  -->
 DeepDocs is a LLM-powered GitHub app that keeps your documentation—like READMEs, Wikis, API references, SDK guides, tutorials etc. up-to-date with your changing repo, eliminating manual effort.
+[Installation link](https://github.com/marketplace/deepdocsai)
 
 ## How it works
 <!--  -->
@@ -26,7 +27,7 @@ DeepDocs is a LLM-powered GitHub app that keeps your documentation—like README
 ## Setup
 <!--  -->
 1. **Install DeepDocs**  
-Install DeepDocs in the repo with your source code and docs. If docs are in a separate repo, install it there too.
+[Install DeepDocs](https://github.com/marketplace/deepdocsai) in the repo with your source code and docs. If docs are in a separate repo, install it there too.
 
 2. **Add `deepdocs.yml`**  
 In the source repo’s `main` branch, add a `deepdocs.yml` file specifying which doc files to update. You can use one of two formats:
