@@ -24,7 +24,6 @@ DeepDocs supports two modes, each suited for different use cases:
 - DeepDocs can **add**, **modify**, **delete**, or leave documentation **unchanged**, depending on the detected code changes.
   
 
-
 ## 3. Know the Possible Update States
 
 Each documentation update is categorized into one of four statuses:
