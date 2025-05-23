@@ -1,103 +1,100 @@
 # Best Practices for Using DeepDocs
 
-DeepDocs is designed to help you keep your documentation up-to-date by automatically syncing it with your code changes. To get the most out of DeepDocs and avoid surprises, follow these best practices.
+DeepDocs helps keep your documentation up-to-date by automatically syncing it with your code changes. To get the most out of DeepDocs, follow these best practices.
 
+## 1. Know What DeepDocs Does Best
 
-## 1. Understand What DeepDocs Is (and Isn’t) Good At
+DeepDocs excels at **updating existing documentation** to reflect code changes. It is **not designed to create docs from scratch**.
 
-DeepDocs excels at **modifying existing documentation** to reflect code changes. It is **not designed to create documentation from scratch**.
-
-- In `target_files` mode, DeepDocs can only **modify** or **delete** the specified files.
-- If you want to **add** new documentation, consider writing the first version manually.
-  
+- To document new logic, manually create an initial version of the doc.
+- DeepDocs works best when docs are directly tied to code—such as:
+  - API references
+  - SDK guides
+  - Tutorials
+  - Configuration or setup instructions
+  - Component or module-level docs
 
 ## 2. Choose the Right Sync Mode
 
-DeepDocs supports two modes, each suited for different use cases:
+DeepDocs supports two modes:
 
 ### `target_files` Mode
-- You provide specific documentation files to be updated.
-- DeepDocs will only **modify** or **delete** those files—**no new files will be created**.
+- Provide up to 5 specific files from the same repo
+- Use this option when you want to update specific doc files only.
 
 ### `target_repo` Mode
-- You provide a repository (or subfolder) as the documentation destination.
-- DeepDocs can **add**, **modify**, **delete**, or leave documentation **unchanged**, depending on the detected code changes.
-  
+- Provide a repo or subfolder as the target.
+- Use this when you want DeepDocs to decide which docs to update within a folder or entire repo.
 
-## 3. Know the Possible Update States
+Refer the [README](https://github.com/DeepDocsAI/DeepDocsAI/blob/main/README.md) on how to define these.
 
-Each documentation update is categorized into one of four statuses:
-- `unchanged`: No relevant code change detected.
-- `added`: A new file is created (only in `target_repo` mode).
-- `modified`: An existing file is updated.
-- `deleted`: A file is removed based on code changes.
-  
+## 3. Understand Update Statuses
 
+Each documentation update is marked with one of the following statuses:
 
-## 4. Kickstart New Docs Manually for Better Results
-
-If you’ve written new code that isn’t yet documented:
-- DeepDocs may try to **append** that content to an existing doc rather than creating a new file.
-- To guide DeepDocs, **create an initial version of the intended doc file** yourself.
-  - Include even a short placeholder version that reflects the new logic.
-  - DeepDocs will then reliably update this file as the code evolves.
-    
-
-## 5. Always Use the `main` Branch as the Source of Truth
-
-DeepDocs uses the `main` branch of your repo to determine the latest version of your documentation. All comparisons and updates are made against the `main` branch.
-
-- Make sure your `main` branch always reflects your latest published documentation.
-  
+- `unchanged`: No changes
+- `modified`: Existing file updated
+- Files marked for deletion are returned with empty content and the status `modified`
+- Files marked for addition are appended to an existing file and also returned with the status `modified`
 
 
-## 6. Review Doc Updates in Pull Requests
+## 4. Write New Docs Manually
 
-When a pull request is created:
-- DeepDocs will generate a documentation update **commit** and **attach it to the same PR**, if the documentation lives in the same repo.
-- If your documentation lives in an external repo, DeepDocs will open a **new PR** in that repo.
+If you’ve added new logic that isn't documented yet:
+- DeepDocs may try to append content to existing files.
+- Instead, **create a short placeholder file with description**—DeepDocs will then try to update it.
 
-**Important:** Reviewers should always:
-- Examine the AI-generated documentation updates.
-- Make manual corrections if needed.
-- Avoid approving doc updates blindly.
-  
+## 5. Use `main` as the Source of Truth
 
+DeepDocs compares against the `main` branch to determine changes.
 
-## 7. Use Clear and Modular Code
+- Ensure your `main` branch reflects the latest code and docs.
+- `deepdocs.yml` must be committed to the `main` branch.
 
-Well-structured, clearly named functions and modules lead to more accurate doc updates.
+## 6. Review Updates in Pull Requests
 
-- Avoid overly long functions or unclear naming.
-- Group related logic into reusable, understandable components.
-  
+When a PR is opened:
 
+- If docs are in the same repo, DeepDocs adds a commit to the same PR.
+- If docs are in an external repo, a new PR is opened there.
 
-## 8. Validate Your Configuration
+**Always review the doc updates**:
+- Check for relevance and accuracy
+- Don’t approve blindly—treat docs like code
+
+## 7. Write Clear, Modular Code
+
+Well-structured code leads to better doc updates.
+
+- Use descriptive function and variable names
+- Keep functions focused and short
+- Break logic into reusable modules
+
+## 8. Validate Your Config
 
 Make sure your `deepdocs.yml` is:
-- Committed to the `main` branch.
-- Correctly specifies `source_globs` and either `target_files` or `target_repo`.
 
-Improper or missing configuration will result in skipped updates or errors.
+- Committed to the `main` branch
+- Correctly specifies `source_globs` and either `target_files` or `target_repo`
 
+Improper or missing configuration will result in skipped updates.
 
+## 9. Monitor for Unexpected Changes
 
-## 9. Monitor for Unexpected Updates
+DeepDocs uses AI—while often accurate, it may:
 
-Although DeepDocs aims for precision, it's still an AI-based tool:
-- Monitor diffs for hallucinations, especially in newly added sections.
-- You can always manually revert or edit the suggested changes.
-  
+- Misinterpret intent or context
+- Hallucinate content in rare cases
 
+**Always review diffs** before merging.
 
-## 10. Encourage Contributor Awareness
+## 10. Keep Your Team Informed
 
-Educate your contributors:
-- Let them know DeepDocs may update documentation on their PRs.
-- Ask them to **review documentation changes** as seriously as they review code.
+Let contributors know:
 
+- DeepDocs may update docs in their PRs
+- They’re responsible for reviewing those changes
 
+---
 
-By following these practices, you'll get the most reliable, transparent, and maintainable results from DeepDocs.
-
+By following these practices, you’ll get reliable, accurate, and maintainable documentation updates with every PR.
