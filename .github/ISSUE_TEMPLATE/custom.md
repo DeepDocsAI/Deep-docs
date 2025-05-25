@@ -1,6 +1,6 @@
 ---
 name: Credits request
-about: A template for requesting more credits
+about: Request more credits to your exsiting plan
 title: 'Credits request'
 labels: ''
 assignees: ''
