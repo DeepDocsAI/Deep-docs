@@ -43,8 +43,7 @@ target_files:
 
 
 3. **Create a PR**
-Make a code change and open a PR. DeepDocs will update the relevant files in a commit and add it to same PR. If docs are in a separate repo, a PR will be opened there.
-
+Make a code change and open a pull request. DeepDocs will update the relevant docs in a new commit and add it to the same PR. If your docs are in a separate repo, it will open a PR there instead.
 
 ## Credit usage
 <!-- -->
