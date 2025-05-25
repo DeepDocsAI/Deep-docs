@@ -1,4 +1,11 @@
-# Changelog – DeepDocs (AI-powered GitHub App for Auto-Updating Documentation)
+# Changelog for DeepDocs
+
+## 2025-05-25 – DB updates
+- Cleaned up schema and removed deprecated columns from subscription logic.
+- Added support for tracking install status and user identity in credits table.
+- Refactored webhook event flow for installation lifecycle into a unified handler.
+- Improved credit tracking consistency across create, delete, and suspend events.
+  
 
 ## 2025-05-19 – Context-Aware Updates
 - Launched context-aware documentation updates using vector-based semantic search.
