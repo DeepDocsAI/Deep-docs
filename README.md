@@ -3,7 +3,7 @@
 DeepDocs is a LLM-powered app that keeps your GitHub documentation—like READMEs, API references, SDK guides, wikis, tutorials etc. up-to-date with your changing codebase, eliminating manual effort.
 
 
-## How it works
+## How it works (▶️ [Watch](https://rb.gy/5jj1yp))
 <!--  -->
 1. In your main repo, specify the path to your doc files.
 2. When a PR is opened, DeepDocs automatically updates the relevant docs based on code changes.
