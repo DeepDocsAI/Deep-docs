@@ -1,6 +1,7 @@
 # Changelog for DeepDocs
 
 ## 2025-05-25 – DB updates
+- Streamlined bulk update embedding logic
 - Cleaned up schema and removed deprecated columns from subscription logic.
 - Added support for tracking install status and user identity in credits table.
 - Refactored webhook event flow for installation lifecycle into a unified handler.
