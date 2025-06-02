@@ -51,6 +51,7 @@ Each doc update consumes 1 credit, regardless of the number of code changes. If 
 
 ## More
 <!-- -->
+- [Tutorial](https://drive.google.com/file/d/1sCdnSdBkNu6D8PDAbc4qnvi0m_secmH3/view)
 - [Best Practices](https://github.com/DeepDocsAI/Deep-docs/blob/main/Best_Practices.md)
 - [Report an issue](https://github.com/DeepDocsAI/Deep-docs/issues)
 - [Changelog](https://github.com/DeepDocsAI/Deep-docs/blob/main/Changelog.md)
