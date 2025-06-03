@@ -22,7 +22,7 @@ DeepDocs is a LLM-powered app that keeps your GitHub documentation—like README
 ### 1. Install DeepDocs  
 [Install](https://github.com/marketplace/deepdocsai) it in your source code repo. If docs are in a separate repo, install it there too.
 
-If DeepDocs isn't active on your repos yet, go to Settings > GitHub Apps, click Configure next to DeepDocsAI, select your source and docs repos (separately if needed), and hit Save.
+If DeepDocs isn't active on your repos yet, go to any repo's Settings > GitHub Apps, click Configure next to DeepDocsAI, select your source and docs repos (separately if needed), and hit Save.
 
 ### 2. Add `deepdocs.yml`  
 In the `main` branch, place a `deepdocs.yml` file at the root of your source code repo. This file should specify the GitHub URLs of the doc files to be updated — all URLs must point to files that exist on the `main` branch. You've two options for it:
